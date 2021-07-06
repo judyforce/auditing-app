@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="audit_log_entries" type="Audit_Log_Entry__c[]"/>
+</aura:event>

@@ -1,0 +1,24 @@
+{
+  "records": [
+      {
+          "attributes": {
+              "type": "Audit_Log_Entry__c",
+              "referenceId": "Audit_Log_Entry__cRef1"
+          },
+          "Github_User__c": "BenBozou",
+          "Timestamp__c": "7/12/21",
+          "Country_Code__c": "USA",
+          "Action__c": "Created pull request"
+      },
+      {
+          "attributes": {
+              "type": "Audit_Log_Entry__c",
+              "referenceId": "Audit_Log_Entry__cRef1"
+          },
+          "Github_User__c": "judy",
+          "Timestamp__c": "7/12/21",
+          "Country_Code__c": "USA",
+          "Action__c": "Created pull request"
+      }
+  ]
+}
