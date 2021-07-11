@@ -1,18 +1,48 @@
-# Salesforce DX Project: Next Steps
+# How to get started: 
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+## Clone repo 
 
-## How Do You Plan to Deploy Your Changes?
+$ mkdir auditing-app
+$ cd auditing-app
+$ git clone https://github.com/judyforce/auditing-app
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Create Scratch Org with the alias of auditing-app
 
-## Configure Your Salesforce DX Project
+$ sfdx force:org:create -f config/project-scratch-def.json -a AuditApp
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Push Code into the Scratch Org
 
-## Read All About It
+$ sfdx force:source:push 
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## Changing Permission Set 
+
+$ sfdx force:org:open -u AuditApp
+
+From Setup, enter Permission Sets in the Quick Find box, then click Permission Sets.
+Click New and enter the details:
+
+Label: AuditingApp
+API Name: AuditingApp
+Description: Grants access to the Auditing App
+Click Save.
+Under Apps, click Object Settings.
+Click Github Auditing.
+Click Edit.
+For Tab Settings, select both Available and Visible, then click Save.
+Next, assign the permission set to yourself. 
+
+Click Manage Assignments, then Add Assignments.
+Select the checkbox next to the scratch org username (User, User), click Assign, then click Done.
+User User is the default full name given to the system administrator in a scratch org. Go ahead and change it in Setup if you want a more exciting name.  
+
+## Pull Changes
+
+$ sfdx force:source:pull
+
+## Open Auditing App Tab from Org
+
+$ sfdx force:org:open -u AuditApp
+Type in the search bar, "Github Auditing"
+
+
+## At the moment data isn't filtered automatically. You insert data by calling GithubAPI.main() in an anonymous window. From there, you can use the search component to show the results of a search term 
