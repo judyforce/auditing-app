@@ -22,14 +22,14 @@ public with sharing class githubAPI {
             /*If you are not using an HttpCalloutMock: 
             }
             */
-            // system.debug(res.toString());
+        system.debug(res.toString());
+        system.debug(res.getBody());
         return res;
     }
 
-public void main(){
-    callout('GET', '/orgs/auditing-tool-tester/auditlog');
-    //sfdx force:data:tree:export -q "SELECT Github_User__c, Timestamp__c, Country_Code__c, Action__c FROM Audit_Log_Entry__c" -d ./data
-
+public static void main(){
+    httpResponse res = callout('GET', '/orgs/auditing-tool-tester/audit-log');
+    List<Audit_Log_Entry__c> data = JSONtoAuditLogEntryConversion.parse(res.getBody());
 }
 
 }

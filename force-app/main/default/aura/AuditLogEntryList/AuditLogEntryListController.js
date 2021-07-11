@@ -2,8 +2,33 @@
     onAccountsLoaded: function( component, event, helper ) {
         var cols = [
             {
+                'label': 'Date & Time',
+                'fieldName': 'Timestamp__c',
+                'type': 'datetime'
+            },
+            {
                 'label': 'Github Username',
                 'fieldName': 'Github_User__c',
+                'type': 'text'
+            },
+            {
+                'label': 'Action',
+                'fieldName': 'Action__c',
+                'type': 'text'
+            },
+            {
+                'label': 'Repo',
+                'fieldName': 'Repository__c',
+                'type': 'text'
+            },
+            {
+                'label': 'Branch Name',
+                'fieldName': 'Branch_Name__c',
+                'type': 'text'
+            },
+            {
+                'label': 'Access Recipient',
+                'fieldName': 'Access_Recipient__c',
                 'type': 'text'
             },
             {
@@ -12,8 +37,13 @@
                 'type': 'text'
             },
             {
-                'label': 'Action',
-                'fieldName': 'Action__c',
+                'label': 'Org',
+                'fieldName': 'Org__c',
+                'type': 'text'
+            },
+            {
+                'label': 'Document ID',
+                'fieldName': 'Document_ID__c',
                 'type': 'text'
             },
             // {

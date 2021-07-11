@@ -6,12 +6,22 @@ public with sharing class AuditLogEntrySearchController {
             List<List<SObject>> searchResults = [
                 FIND :searchTerm
                 RETURNING Audit_Log_Entry__c(
-                    Action__c, Country_Code__c, Github_User__c, Timestamp__c
-                    ORDER BY Github_User__c
-                    LIMIT 10
+                    Timestamp__c, Github_User__c, Action__c, Repository__c, Branch_Name__c, Access_Recipient__c, Country_Code__c, Org__c, Document_ID__c
+                    ORDER BY Timestamp__c
+                    LIMIT 100
                 )
             ];
             audit_log_entries = searchResults[0];
+        }
+        else{
+            List<List<SObject>> searchResults = [
+                FIND : 'auditing-tool-tester'
+                RETURNING Audit_Log_Entry__c(
+                    Timestamp__c, Github_User__c, Action__c, Repository__c, Branch_Name__c, Access_Recipient__c, Country_Code__c, Org__c, Document_ID__c
+                    ORDER BY Timestamp__c
+                    LIMIT 250
+                )
+            ];
         }
         return audit_log_entries;
     }
