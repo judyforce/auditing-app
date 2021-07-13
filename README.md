@@ -45,4 +45,4 @@ $ sfdx force:org:open -u AuditApp
 Type in the search bar, "Github Auditing"
 
 
-## At the moment data isn't filtered automatically. You insert data by calling GithubAPI.main() in an anonymous window. From there, you can use the search component to show the results of a search term 
+### At the moment data isn't filtered automatically. You insert data by calling DatabaseModel.main() in an anonymous window. From there, you can use the search component to show the results of a search term 
