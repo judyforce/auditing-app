@@ -99,7 +99,6 @@ private static List<Audit_Log_Entry__c> arrayOfJSONtoAuditLogEntryConversion(Sys
     while (p.nextToken() != System.JSONToken.END_ARRAY) {
         res.add(JSONtoAuditLogEntryConversion(p));
     }
-	insert res; 
     return res;
 }
 

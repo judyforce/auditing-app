@@ -8,7 +8,7 @@
                 label="Search"
                 variant="label-hidden"
                 value="{!v.searchTerm}"
-                placeholder="Search by Github Username, Date, Action, or Country"
+                placeholder="Search"
                 onchange="{!c.onSearchTermChange}"/>
         </div>
     </lightning:card>

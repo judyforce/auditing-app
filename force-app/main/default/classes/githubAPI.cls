@@ -27,9 +27,4 @@ public with sharing class githubAPI {
         return res;
     }
 
-public static void main(){
-    httpResponse res = callout('GET', '/orgs/auditing-tool-tester/audit-log');
-    List<Audit_Log_Entry__c> data = JSONtoAuditLogEntryConversion.parse(res.getBody());
-}
-
 }
